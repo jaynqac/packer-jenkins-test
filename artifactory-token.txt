@@ -1,0 +1,4 @@
+bot-name: leds-af-bot
+Token below:
+
+AKCp2WWYhFbCsurPcw2sFnYkhVjj67wiQ9AV2BesxyW1CkbYkzumPY9HnC5611EvQ78XbPU6g

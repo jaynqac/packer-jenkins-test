@@ -1,0 +1,35 @@
+{
+  "builders": [
+  {
+    "type": "docker",
+    "image": "centos",
+    "commit": true,
+    "changes": [
+      "EXPOSE 8080 8443",
+      "ENTRYPOINT /opt/apache-tomcat-7.0.77/bin/catalina.sh run"
+    ]
+  }
+  ],
+  "provisioners": [
+  {
+    "type": "shell",
+    "script": "install-java.sh"
+  },
+  {
+    "type": "shell",
+    "script": "install-tomcat.sh"
+  },
+  {
+    "type": "file",
+    "source": "hello-world.war",
+    "destination": "/opt/apache-tomcat-7.0.77/webapps"
+  }
+  ],
+  "post-processors": [
+  {
+    "type": "docker-tag",
+    "repository": "tomcat-local",
+    "tag": "v0.3.1"
+  }
+  ]
+}
