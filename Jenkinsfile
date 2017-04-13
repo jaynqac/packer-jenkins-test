@@ -15,7 +15,7 @@ node {
       sh "/Users/Shared/Jenkins/packer validate ${packer_file}"
 
     stage 'Build'
-      sh "sudo /Users/Shared/Jenkins/packer build ${packer_file}"
+      sh "/Users/Shared/Jenkins/packer build ${packer_file}"
 
     stage 'Test'
       print "Testing goes here."
