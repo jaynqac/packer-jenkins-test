@@ -13,6 +13,7 @@ node {
       def packer_file = 'packer.json'
       print "Running packer validate on : ${packer_file}"
       sh "/Users/Shared/Jenkins/packer validate ${packer_file}"
+      sh "echo ~"
 
     stage 'Build'
       sh "/Users/Shared/Jenkins/packer build ${packer_file}"
